@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(cors());
 app.use(morgan('dev'));
 
-// app.use('/characters', characterController)
+app.use('/characters', characterController)
 
 app.get("/", (req, res) => {
 	res.send("hello world");
