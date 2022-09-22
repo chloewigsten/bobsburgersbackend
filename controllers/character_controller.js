@@ -31,16 +31,6 @@ router.get('/:id', async (req,res) =>   {
     }
 })
 
-//Delete Route
-router.delete("/:id", async (req, res) => {
-    try {
-    res.json(await Characters.findByIdAndRemove(req.params.id));
-    } catch (error) {
-    res.status(400).json(error);
-    }
-});
-  
-
 //Update Route 
 router.put("/:id", async (req, res) => {
     try {
@@ -51,6 +41,16 @@ router.put("/:id", async (req, res) => {
       res.status(400).json(error);
     }
   });
+
+  //Delete Route
+router.delete("/:id", async (req, res) => {
+    try {
+    res.json(await Characters.findByIdAndRemove(req.params.id));
+    } catch (error) {
+    res.status(400).json(error);
+    }
+});
+  
 
 
   module.exports = router; 
