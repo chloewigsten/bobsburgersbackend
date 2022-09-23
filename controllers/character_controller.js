@@ -14,7 +14,7 @@ router.get('/', async (req,res) => {
 })
 
 //Create Route
-router.post('/', async (req,res) => {
+router.post('/', async (req,res, next) => {
     try {
         res.json(await Characters.create(req.body));
     } catch (error) {
@@ -43,7 +43,7 @@ router.put("/:id", async (req, res) => {
   });
 
   //Delete Route
-router.delete("/:id", async (req, res) => {
+router.delete("/characters/:id", async (req, res) => {
     try {
     res.json(await Characters.findByIdAndRemove(req.params.id));
     } catch (error) {

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const {MONGODB_URI} = process.env
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 4000
 
 mongoose.connect(MONGODB_URI)
 
